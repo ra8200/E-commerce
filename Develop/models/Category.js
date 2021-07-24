@@ -10,7 +10,8 @@ Category.init(
       type: DataType.integer,
       primaryKey: true,
       autoIncrement: true,
-  },  
+  },
+  
     catagory_name: {
       type: DataType.String,
       allowNull: false,

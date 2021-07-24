@@ -1,5 +1,8 @@
 // import important parts of sequelize library
-const { Model, DataTypes } = require('sequelize');
+const {
+  Model,
+  DataTypes
+} = require('sequelize');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
 
@@ -7,17 +10,35 @@ const sequelize = require('../config/connection');
 class Product extends Model {}
 
 // set up fields and rules for Product model
-Product.init(
-  {
-    // define columns
+Product.init({
+  id: {
+    type: DataType.Integer,
+    primaryKey: true,
+    autoIncrement: true,
   },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'product',
-  }
-);
+  product_name: {
+    type: DataType.String,
+  }, 
+  price: {
+    type: DataType.Decimal(10,2),
+  },
+  stock: {
+    type: DataType.Integer,
+  },
+  catagory_id: {
+    type: DataType.Integer,
+    allowNull: true,
+    references: {
+      model: "catagory",
+      key: "id",
+    },
+  },
+
+  sequelize,
+  timestamps: false,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'product',
+});
 
 module.exports = Product;
