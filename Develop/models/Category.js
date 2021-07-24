@@ -11,8 +11,7 @@ Category.init(
       primaryKey: true,
       autoIncrement: true,
   },
-  
-    catagory_name: {
+      category_name: {
       type: DataType.String,
       allowNull: false,
   },

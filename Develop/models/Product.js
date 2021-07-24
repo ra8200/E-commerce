@@ -25,15 +25,15 @@ Product.init({
   stock: {
     type: DataType.Integer,
   },
-  catagory_id: {
+  category_id: {
     type: DataType.Integer,
     allowNull: true,
     references: {
-      model: "catagory",
+      model: "category",
       key: "id",
     },
   },
-
+},{
   sequelize,
   timestamps: false,
   freezeTableName: true,
