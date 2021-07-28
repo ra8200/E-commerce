@@ -7,12 +7,12 @@ class Tag extends Model {}
 Tag.init(
   {
     id: {
-      type: DataType.integer,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
   },
     tag_name: {
-      type: DataType.String,
+      type: DataTypes.STRING,
       allowNull: false,
   },
   },
